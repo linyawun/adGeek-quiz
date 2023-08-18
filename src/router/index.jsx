@@ -2,6 +2,7 @@ import { RootRoute, Route } from '@tanstack/react-router';
 import StartPage from '../components/StartPage';
 import Question from '../components/Question';
 import Result from '../components/Result';
+import Answer from '../components/Answer';
 
 let rootRoute = new RootRoute();
 const startRoute = new Route({
@@ -19,11 +20,17 @@ const resultRoute = new Route({
   path: '/result',
   component: Result,
 });
+const answerRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: '/answer',
+  component: Answer,
+});
 
 const routeTree = rootRoute.addChildren([
   startRoute,
   questionRoute,
   resultRoute,
+  answerRoute,
 ]);
 
 export default routeTree;

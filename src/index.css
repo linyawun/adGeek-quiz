@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -21,7 +22,7 @@ body {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   opacity: 1;
   display: block;
   position: absolute;
@@ -52,7 +53,6 @@ body {
       #ffe600 270deg 360deg
     )
     1 stretch;
-  /* background: rgb(255 255 255 / var(--opacity)); */
 }
 
 /* Animate when Houdini is available */
@@ -115,6 +115,10 @@ body {
   }
 }
 
+.color-primary {
+  color: #6442ff;
+}
+
 .bg-primary {
   background-color: #6442ff;
 }
@@ -127,10 +131,87 @@ body {
   background-color: #9b80ff;
 }
 
+.color-blue-purple {
+  color: #53139b;
+}
+
 .bg-light-gray {
   background-color: #e5e5e5;
 }
 
 .bg-dark-gray {
   background-color: #666666;
+}
+
+.button-secondary {
+  background-color: #9b80ff;
+  color: #fff;
+  border-bottom: 4px solid #53139b;
+  transition: all 0.3s;
+}
+
+.button-secondary:hover {
+  background-color: #53139b;
+  color: #fff;
+  border-bottom: 4px solid #9b80ff;
+}
+
+.button-white {
+  background-color: #fff;
+  color: #53139b;
+  border-bottom: 4px solid #53139b;
+  transition: all 0.3s;
+}
+
+.button-white:hover {
+  background-color: #53139b;
+  color: #fff;
+  border-bottom: 4px solid #9b80ff;
+}
+
+@keyframes colorAnimation-a {
+  0%,
+  100% {
+    background-color: #fad955;
+  }
+  50% {
+    background-color: #fdcb00ef;
+  }
+}
+
+@keyframes colorAnimation-b {
+  0%,
+  100% {
+    background-color: #60a5fa;
+  }
+  50% {
+    background-color: #1c82ff;
+  }
+}
+
+.block-a {
+  background-color: #f8d032;
+  animation: colorAnimation-a 3s infinite;
+}
+
+.block-b {
+  background-color: #60a5fa;
+  animation: colorAnimation-b 3s infinite;
+}
+#medal {
+  width: 250px;
+}
+.light {
+  animation: anim 2s infinite;
+}
+
+@keyframes anim {
+  0% {
+    x: 111.416;
+    y: 50.37;
+  }
+  100% {
+    x: 400;
+    y: 50;
+  }
 }
