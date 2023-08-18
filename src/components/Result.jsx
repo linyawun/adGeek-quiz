@@ -7,8 +7,7 @@ import Medal from './Medal';
 
 function Result() {
   const navigate = useNavigate({ from: '/result' });
-  const { score, type } = useSelector((state) => state.user);
-  const { filteredQuestions } = useSelector((state) => state.question);
+  const { type } = useSelector((state) => state.user);
   useEffect(() => {
     if (!type) {
       navigate({ to: '/' });
@@ -22,10 +21,6 @@ function Result() {
     >
       <div className='flex flex-col px-10 justify-center items-center flex-grow z-10'>
         <h2 className='text-3xl mb-10'>Congratulations! Your score is</h2>
-        {/* <div className=' fond-bold w-5/6 text-white py-5 text-center'>
-          <span className='text-6xl'>{score}</span>
-          <span className='text-3xl'> / {filteredQuestions.length}</span>
-        </div> */}
         <Medal />
       </div>
       <footer className='mt-auto text-white py-6 z-20'>
@@ -43,14 +38,12 @@ function Result() {
         </Link>
         <div className='mt-8 mx-auto flex justify-center items-center w-2/6'>
           <a
-            href='https://www.adgeek.com/'
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfTUnJfTl-4893KFE1OF1-NKVpAyAzBzGLnHJmo5g4NxNZZSw/viewform'
             target='_blank'
             rel='noopener noreferrer'
             className=''
           >
-            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfTUnJfTl-4893KFE1OF1-NKVpAyAzBzGLnHJmo5g4NxNZZSw/viewform'>
-              <img src={adGeekLogo} alt='adgeek Logo' />
-            </a>
+            <img src={adGeekLogo} alt='adgeek Logo' />
           </a>
         </div>
       </footer>

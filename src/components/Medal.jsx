@@ -1,12 +1,10 @@
 import { useSelector } from 'react-redux';
 function Medal() {
   const { score } = useSelector((state) => state.user);
-  const { filteredQuestions } = useSelector((state) => state.question);
   return (
     <div className='flex justify-center items-center relative'>
       <div className='absolute bottom-1/3'>
         <span className='text-5xl'>{score * 10}</span>
-        {/* <span className='text-2xl'> / {filteredQuestions.length}</span> */}
       </div>
       <svg
         id='medal'
